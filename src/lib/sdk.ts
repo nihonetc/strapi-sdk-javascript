@@ -96,7 +96,7 @@ export default class Strapi {
       return response.data;
     } catch (error) {
       if (error.response) {
-        throw new Error(error.response.data.message);
+        throw new Error(error.response.data.message[0].messages[0].id);
       } else {
         throw error;
       }
